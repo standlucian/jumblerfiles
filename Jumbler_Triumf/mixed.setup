@@ -1,0 +1,13 @@
+format GASP
+detector     G           64        1   32768
+detector     A           64  PLUS  1   32768
+
+pairdef RelAng-180-all.pairs
+
+sort3d_pair   G0 G0 P0  RelAngMixedNew  Res 11264 11264 256 Step 512 512 16
+
+*sort2d_symm G0 mixedMatrix  Res 32768 Step 128  
+
+*copy G A
+
+*GATE A0 6782 6792 IN  1  64
