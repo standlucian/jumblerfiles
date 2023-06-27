@@ -1,0 +1,14 @@
+format GASP
+header       F     0 PLUS 2  32768 128 
+detector     G           64        1   32768
+*detector     A	       1  PLUS   1   32768
+
+*pairdef RelAng-180-all.pairs
+
+HK G0 F0 F1 0.0 1.0 0 32768
+
+*sort3d_pair   G0 G0 P0  RelAngMixed  Res 11264 11264 256 Step 512 512 16
+
+*proje
+
+sort3d G0 F0 F1 sumCube  Res 16384 16384 16 Step 128 128 2

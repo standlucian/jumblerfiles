@@ -1,0 +1,26 @@
+format GASP
+header       F              	  1   32768   
+detector     T           2        3   32768    32768    32768  
+cdetector    C	        16   	  6    32768   32768    32768   32768   32768   32768  SEG 4 2 32768   32768  
+
+GATE C1 16480  16550 OUT 0  64
+GATE C3 16480  16550 OUT 0  64
+GATE C5 16480  16550 OUT 0  64
+
+GATE C7 16480  16550 IN  1  64
+GATE C6     2  32760 IN  1  64
+
+recal C6 64Nicu-E   NORUN  0.00 1.00 10 32600 0 64
+recal C6 E-cal-1541-6423.cal   RUN  0.00 1.00 10 32600 0 64
+
+addback C6
+
+GATE C7 16480  16550 IN  2  64
+GATE C6     2  32760 IN  2  64
+
+write Disk R 0  0 0 0  0 0 0 0 0 0 1 0
+
+
+*sort2d_symm C6 originalMatrix  Res 32768 Step 128  
+
+*proje
